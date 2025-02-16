@@ -52,7 +52,7 @@ This allows you to verify the MOK certificate to operate on.
 
 ### Revoke user-specified machine owner keys
 
-Run the following command to remoke a user-specified machine owner key:
+Run the following command to revoke user-specified machine owner keys:
 
 ```bash
 sudo mokutil --delete _certificate_file_...
