@@ -40,12 +40,24 @@ mokutil --export
 
 After running the command you should be able to locate the exported machine owner certificates at the working directory with the MOK-\*.der filenames.
 
+### View exported certificate information
+
+Run the following command to view the information of the specified exported machine owner key certificate file:
+
+```bash
+openssl x509 -in _certificate_file_ -noout -text
+```
+
+This allows you to verify the MOK certificate to operate on.
+
 ## References
 
 The following materials are referenced during the development of this project:
 
 * [The output of the `mokutil --help` command](command-outputs/mokutil-help.out.txt).  
   Explains the supported options of the `mokutil` command.
+* The openssl-x509 tldr page  
+  Explains the command to view X.509 format exported machine owner key certificates.
 
 ## Licensing
 
