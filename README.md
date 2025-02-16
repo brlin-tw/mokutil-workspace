@@ -30,6 +30,16 @@ Some common machine owner keys and their source:
   SHA-1 fingerprint: `54:f4:18:74:f4:d8:84:28:09:bc:be:88:10:65:92:0a:17:56:5d:25`  
   This suspicious key is used to sign the Ventoy application bootloader, I would recommend revoking the key whenever it is no longer used from the security perspective.
 
+### Export all currently enrolled machine owner key certificates
+
+Run the following command to export all currently enrolled machine owner key certificates:
+
+```bash
+mokutil --export
+```
+
+After running the command you should be able to locate the exported machine owner certificates at the working directory with the MOK-\*.der filenames.
+
 ## References
 
 The following materials are referenced during the development of this project:
