@@ -50,6 +50,27 @@ openssl x509 -in _certificate_file_ -noout -text
 
 This allows you to verify the MOK certificate to operate on.
 
+### Revoke user-specified machine owner keys
+
+Run the following command to remoke a user-specified machine owner key:
+
+```bash
+sudo mokutil --delete _certificate_file_...
+```
+
+You need to first [export all the enrolled machine owner key certificates](#export-all-currently-enrolled-machine-owner-key-certificates) in order to delete them.
+
+To complete this operation you need to specify and remember a password to complete the single-time machine owner presence validation during the system boot process, the steps are documented as the following:
+
+1. Reboot the system.
+1. When the blue background countdown prompt appears, press any key to enter the Perform MOK management menu.
+1. Select the Delete MOK option in the Perform MOK management menu.
+1. View details of all machine owner keys to be deleted to avoid misoperation, then select the Continue option to continue.
+1. Select the Yes option in the Delete the key(s)? prompt.
+1. Enter the password specified in the `mokutil --delete` command.
+1. Select the Reboot option in the Perform MOK management menu.
+1. After rebooting the system, [list the currently-enrolled machine owner keys](#list-the-currently-enrolled-machine-owner-keys) to verify whether the machine owner keys are really revoked.
+
 ## References
 
 The following materials are referenced during the development of this project:
