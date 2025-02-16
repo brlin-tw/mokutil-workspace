@@ -7,6 +7,36 @@ Workspace for assistance in manipulating machine owner keys of the shim bootload
 
 \#shim \#secure-boot \#mokutil
 
+## Common operations
+
+This section documents common operations regarding the usage of the `mokutils` utility:
+
+### List the currently-enrolled machine owner keys
+
+Run the following command to list the currently-enrolled machine owner keys:
+
+```bash
+mokutil --list-enrolled
+```
+
+Some common machine owner keys and their source:
+
+* Canonical Ltd. Master Certificate Authority  
+  Subject: `C=GB, ST=Isle of Man, L=Douglas, O=Canonical Ltd., CN=Canonical Ltd. Master Certificate Authority`  
+  SHA-1 fingerprint: `76:a0:92:06:58:00:bf:37:69:01:c3:72:cd:55:a9:0e:1f:de:d2:e0`  
+  This is the key used to sign the GRUB bootloader, modules, and kernel modules of the Ubuntu distribution.
+* Ventoy signing key  
+  Subject: `CN=grub`  
+  SHA-1 fingerprint: `54:f4:18:74:f4:d8:84:28:09:bc:be:88:10:65:92:0a:17:56:5d:25`  
+  This suspicious key is used to sign the Ventoy application bootloader, I would recommend revoking the key whenever it is no longer used from the security perspective.
+
+## References
+
+The following materials are referenced during the development of this project:
+
+* [The output of the `mokutil --help` command](command-outputs/mokutil-help.out.txt).  
+  Explains the supported options of the `mokutil` command.
+
 ## Licensing
 
 Unless otherwise noted([comment headers](https://reuse.software/spec-3.3/#comment-headers)/[REUSE.toml](https://reuse.software/spec-3.3/#reusetoml)), this product is licensed under [version 3 of the GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.en.html), or any of its more recent versions of your preference.

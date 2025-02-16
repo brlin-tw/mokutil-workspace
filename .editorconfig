@@ -64,3 +64,8 @@ indent_size = 2
 [/LICENSES/*]
 indent_size = unset
 indent_style = unset
+
+# Retain the style of command output files
+[*.out.txt]
+indent_size = unset
+indent_style = unset
